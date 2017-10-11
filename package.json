@@ -1,0 +1,25 @@
+{
+  "name": "vulcain-ext-apikeyauthentication",
+  "version": "1.0.0",
+  "description": "Vulcain extension to add apikey authentication",
+  "main": "dist/index.js",
+  "scripts": {},
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vulcainjs/vulcain-ext-apiKeyAuthentication.git"
+  },
+  "maintainers": [
+    "Alain Metge"
+  ],
+  "license": "Apache-2.0",
+  "typings": "dist/index.d.ts",
+  "dependencies": {
+    "vulcain-corejs": ">2.0.0-"
+  },
+  "devDependencies": {
+    "typescript": "^2.5.3"
+  }
+}
