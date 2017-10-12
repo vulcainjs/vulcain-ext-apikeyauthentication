@@ -32,6 +32,8 @@ export class ApiKeyAuthentication implements IAuthenticationStrategy {
         let userContext = await cmd.runAsync(this.apiKeyServiceName.value, this.apiKeyServiceVersion.value, { token: accessToken, tenant });
         if (!userContext)
             throw new UnauthorizedRequestError("Invalid api key");
+        
+        userContext.scopes = Array.isArray(userContext.scopes) ? userContext.scopes : [<string>userContext.scopes];
         return userContext;
     }
 }

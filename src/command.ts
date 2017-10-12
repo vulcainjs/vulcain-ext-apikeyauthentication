@@ -2,7 +2,10 @@ import { Command, AbstractServiceCommand, UserToken, Model, Property } from "vul
 
 @Model()
 export class VerifyTokenParameter {
-
+    @Property({ type: "string", required: true })
+    token: string;
+    @Property({ type: "string" })
+    tenant: string;
 }
 
 @Command({ executionTimeoutInMilliseconds: 500 })
@@ -11,6 +14,6 @@ export class ApiKeyVerifyCommand extends AbstractServiceCommand {
 
     async runAsync(apiKeyServiceName: string, apiKeyServiceVersion: string, data: VerifyTokenParameter): Promise<UserToken> {
         let resp = await this.sendActionAsync<boolean>(apiKeyServiceName, apiKeyServiceVersion, "apikey.verifyToken", data);
-        return resp.value;
+        return resp && resp.value;
     }
 }
