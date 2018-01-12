@@ -12,7 +12,7 @@ export class ApiKeyAuthentication implements IAuthenticationStrategy {
     public readonly name = "apiKey";
     private enabled: boolean;
 
-    @ConfigurationProperty("apiKeyServiceName", "string")
+    @ConfigurationProperty("apiKeyServiceName", "string") 
     private apiKeyServiceName: IDynamicProperty<string>;
     @ConfigurationProperty("apiKeyServiceVersion", "string")
     private apiKeyServiceVersion: IDynamicProperty<string>;

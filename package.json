@@ -17,7 +17,7 @@
   "license": "Apache-2.0",
   "typings": "dist/index.d.ts",
   "dependencies": {
-    "vulcain-corejs": "^2.0.0-beta23"
+    "vulcain-corejs": "^2.0.0-preview01"
   },
   "devDependencies": {
     "typescript": "^2.6.2"
