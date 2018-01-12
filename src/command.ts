@@ -12,8 +12,8 @@ export class VerifyTokenParameter {
 export class ApiKeyVerifyCommand extends AbstractServiceCommand {
     static commandName = "ApiKeyVerifyCommand";
 
-    async runAsync(apiKeyServiceName: string, apiKeyServiceVersion: string, data: VerifyTokenParameter): Promise<UserToken> {
-        let resp = await this.sendActionAsync<boolean>(apiKeyServiceName, apiKeyServiceVersion, "apikey.verifyToken", data);
+    async run(apiKeyServiceName: string, apiKeyServiceVersion: string, data: VerifyTokenParameter): Promise<UserToken> {
+        let resp = await this.sendAction<boolean>(apiKeyServiceName, apiKeyServiceVersion, "apikey.verifyToken", data);
         return resp && resp.value;
     }
 }
