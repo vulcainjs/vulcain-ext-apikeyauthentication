@@ -1,10 +1,9 @@
 import {
     IAuthenticationStrategy, UnauthorizedRequestError, IAuthorizationPolicy, ConfigurationProperty,
     IDynamicProperty, Inject, DefaultServiceNames, Service, IRequestContext, Injectable, LifeTime,
-    DynamicConfiguration, UserToken
+    DynamicConfiguration, UserToken, CommandFactory
 } from "vulcain-corejs";
 import { ApiKeyVerifyCommand } from "./command";
-import { CommandFactory } from "vulcain-corejs/dist/commands/commandFactory";
 
 @Injectable(LifeTime.Singleton, DefaultServiceNames.AuthenticationStrategy )
 export class ApiKeyAuthentication implements IAuthenticationStrategy {
